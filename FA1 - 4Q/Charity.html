@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <title>Support Our Charity</title>
+    <link rel="stylesheet" href="Charity.css">
+</head>
+<body>
+    <header>
+        <h1>Join Our Charity Campaign</h1>
+    </header>
+
+    <section>
+        <p>
+            Supporting our charity helps make a real difference in the lives of those in need.  
+            Here are three reasons why your support matters:  
+        </p>
+        <ul>
+            <li><strong>Impactful Change:</strong> Your contributions directly support essential programs.</li>
+            <li><strong>Community Support:</strong> Helping individuals fosters a stronger, healthier society.</li>
+            <li><strong>Transparency & Trust:</strong> Our organization ensures donations are used effectively.</li>
+        </ul>
+    </section>
+
+    <form id="signupForm">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label>Sex:</label>
+        <div class="radio-group">
+            <input type="radio" id="male" name="sex" value="Male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="sex" value="Female" required>
+            <label for="female">Female</label>
+
+            <input type="radio" id="prefer-not" name="sex" value="Prefer not to say" required>
+            <label for="prefer-not">Prefer not to say</label>
+        </div>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="contact-number">Contact Number (Optional):</label>
+        <input type="text" id="contact-number" name="contact-number">
+
+        <div class="buttons">
+            <button type="submit">Sign Up</button>
+            <button type="reset">Reset</button>
+        </div>
+
+        <p id="warning-message" class="hidden">⚠ Please fill in all required fields.</p>
+    </form>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) 
+        {
+            let form = event.target;
+            if (!form.checkValidity()) 
+            {
+                event.preventDefault(); // Prevent form submission
+                document.getElementById("warning-message").classList.remove("hidden");
+            }
+        }                                                    
+                                                              );
+    </script>
+</body>
+</html>
